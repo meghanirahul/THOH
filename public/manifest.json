@@ -1,0 +1,25 @@
+{
+  "short_name": "Firebase App",
+  "name": "Basic Firebase",
+  "icons": [
+    {
+      "src": "urbanlogo.svg",
+      "sizes": "141x37",
+      "type": "image/svg"
+    },
+    {
+      "src": "Logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "Logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

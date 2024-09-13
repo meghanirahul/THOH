@@ -1,0 +1,43 @@
+.slide-background{background: #FAE4E6;position: relative;overflow: hidden;}
+.slide-text-images{position: relative;display: flex;justify-content: space-between;}
+.slide-background::before {content: ''; display: block; width: 320px; height: 320px; 
+                           border: 80px solid #E2D4FF; border-radius: 100%; position: absolute; top: -16%; left: -10%;z-index: 0;}
+.slide-background::after {content: ''; display: block; width: 320px; height: 320px; 
+                           border: 80px solid #FFCDD0; border-radius: 100%; position: absolute; bottom: -16%; right: -10%;z-index: 0;}
+.slide-image1{padding: 100px 0 50px 0;}
+.slide-image2{padding: 50px 0 100px 0;}
+.slide-image-container{width: 32%;;max-width: 100%;}
+.slide-images{position: relative;max-width: 100%;height: 100%;}
+.slide-images::after{content: '';display: block;padding-bottom: 135%;}
+.slide-images .inner-img{position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;z-index: 1;}
+.slide-images .slide-icon1, .slide-images .slide-icon2{position: absolute;z-index: 2;}
+.slide-text-content{position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
+                    display: flex;flex-direction: column;flex-wrap: wrap;align-items: center;justify-content: center;z-index: 1;}
+.slide-main{max-width: 660px;}
+.slide-heading{font-size: 80px;text-align: center;line-height: 87px;}
+.slide-heading span{display: block;}
+.slide-info{max-width: 500px;}
+.slide-descrption{text-align: center;line-height: 24px;}
+.slide-button{padding-top: 40px;}
+.button-contain{background: #ffffff;}
+.slide-icon1{bottom: 0%;right: -14%;}
+.slide-icon2{top: 12%;left: -10%;}
+
+.slideshow-main{padding-bottom: 90px;}
+
+.button:hover .button-contain{color: #ee6e33;}
+
+@media screen and (max-width: 1200px){
+    .slide-icon1{top: -12%;left: -18%;}
+    .slide-heading{font-size: 60px;line-height: 67px;}
+}
+@media screen and (max-width: 989px){
+    .slide-icon2{right: -13%;left: auto;}
+    .slide-heading{font-size: 40px;line-height: 47px;}
+    .product_fullinfo .add_to_counter .button-contain{padding: 15px 25px;}
+}
+@media screen and (max-width: 749px){
+    .slideshow-main{padding: 40px 0;}
+    .slide-heading {font-size: 30px;line-height: 35px;}
+    .slide-button{padding-top: 20px;}
+}

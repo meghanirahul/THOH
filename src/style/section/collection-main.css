@@ -1,0 +1,31 @@
+.collection_main .page-name span{color: #00000099;}
+.collection_main{
+    --column-gap: 15px;
+    --row-gap: 20px;
+    --row-items: 3;
+}
+
+
+
+.hero_offers{background: #D53F52;color: #FFFFFF;padding: 10px;}
+.hero_border{display: flex;flex-wrap: wrap;align-items: center;border: 1px dashed;position: relative;}
+.hero_border::after{content: '';display: block;width: 20px;height: 20px;background: url('../../asset/cutter.svg');position: absolute;bottom: 15px;left: -10px;}
+.offer1, .offer2{width: 50%;max-width: 50%;padding: 30px 20px;}
+.offer2{border-left: 1px solid;}
+.offer1 .offername{font-size: 78px;}
+.offer2 .offername{font-size: 28px;font-weight: 400;}
+.offer2 .offername>*{font-weight: 600;font-family: 'futura Md BT';}
+
+.collectiongrid_filter{display: flex;align-items: flex-start;flex-wrap: wrap;padding: 40px 0;}
+.collectiongrid_filter .filter{width: 372px;max-width: 372px;padding-right: 25px;}
+.collectiongrid_filter .collectiongrid{width: calc(100% - 372px);max-width: calc(100% - 372px);}
+
+.products_list{display: flex;flex-wrap: wrap;column-gap: var(--column-gap);row-gap: var(--row-gap);}
+.product_card{width: calc(33% - var(--column-gap)*2/var(--row-items));max-width: calc(33% - var(--column-gap)*2/var(--row-items));}
+.product-img::after{padding-bottom: 138%;}
+
+.loadmore_button{display: flex;justify-content: center;padding-top: 40px;padding-bottom: 20px;}
+
+@media screen and (max-width:749px) {
+    .product-img::after{padding-bottom: 120%;}
+}

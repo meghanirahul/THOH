@@ -1,0 +1,8 @@
+.product-filters{border-right: 1px solid #CECECE;}
+.product-filters h4{font-size: 18px;border-bottom: 1px solid #CECECE;padding-bottom: 25px;}
+.filter-variants{padding: 25px 0;border-bottom: 1px solid #CECECE;}
+.filter-variants p{font-size: 18px;padding-bottom: 15px;}
+.option-gap{display: flex; flex-wrap: wrap; gap: 14px;}
+.brand_options input, .size_options input{display: none;}
+.size_value{display: block;min-width: 40px;padding: 10px;background: #e47ba123;border: 1px solid #FFFFFF;border-radius: 8px;cursor: pointer;text-align: center;}
+.brand_value{display: block;padding: 10px 20px;background: #DADADA;border: 1px solid #FFFFFF;border-radius: 8px;cursor: pointer;}

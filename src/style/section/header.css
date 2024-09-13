@@ -1,0 +1,43 @@
+.header-main,.navbar-mobile{background: #FEF38A;}
+.navbar{display: none;}
+.nav-inline{padding:0;display: flex;flex-wrap:wrap;justify-content: center;align-items: center;gap: 22px;}
+.navmenu{position: relative;}
+.navname{display: block;padding: 14px 0;}
+.submenu{display: none;position: absolute;top: 100%;background: #ffffff;max-height: 350px;z-index: 3;
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;}
+.submenu-items{display: flex;flex-wrap: wrap;flex-direction: column;padding-right: 25px;max-height: 350px;column-gap: 15px;}
+.submenu-nav:not(:last-child,:nth-child(6n)){border-bottom: 1px solid #EDEDED;}
+.subnavname{display: block;padding: 16px 32px;}
+.nav-images{display: flex;align-items: center;}
+.nav-img-items{display: flex;flex-wrap: wrap;gap: 12px;}
+.nav-fetureimage{text-align: center;}
+.submenu-head-img{padding: 0 28px;border-left: 1px solid #EDEDED;}
+.submenu-head-img h2{padding-bottom: 16px;}
+.nav-fetureimage p{padding-top: 10px;}
+.nav-content{position: relative;width: 160px;height: 160px;}
+.nav-content::after{content: '';display: block;padding-bottom: 100%;}
+.nav-content img{position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;}
+
+.withsubnav:hover .submenu{display: flex;flex-wrap: wrap;}
+
+
+.header-mobile{display: none;position: relative;z-index: 20;}
+.menu-drawerouter{display: block;position: fixed;top: 96px;left: 0;min-height: 100%;width: 100%;}
+.navbar-mobile{max-width: 25rem;min-height: 100vh;}
+.header-mobile .navbar-mobile{margin-inline-end: auto;} 
+.header-mobile .nav-inline .navitem{width: 100%;}
+.header-mobile .nav-inline.navmenu{flex-direction: column;align-items: flex-start;gap: 0;padding-right: 25px;}
+.header-mobile .navname{padding: 16px 32px;border-bottom: 1px solid #ffd693}
+.header-mobile{display: none;}
+.header-mobile.menu_block{display: block;}
+.menu_close_button{width: 40px;height: 40px;background: transparent;border: none;cursor: pointer;display: none;}
+.menu_close_button svg{width: 100%;height: 100%;padding: 10px;}
+.navbar-mobile .withsubnav:hover .submenu{position: absolute; top: 0; right: 0; left: 0; bottom: 0; min-height: 100vh;}
+.navbar-mobile .submenu-items{width: 100%;}
+.header-mobile .nav-inline .navitem:last-child .navname{border-bottom: 0px;}
+.apehead{width: 100%;top: 0;z-index: 999;background: #ffffff;}
+
+@media screen and (min-width:990px) {
+    .navbar{display: block;}
+}
+

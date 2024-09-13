@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('./font/FuturaBT-Medium.eot');
+    src: url('./font/FuturaBT-Medium.eot') format('embedded-opentype'),
+        url('./font/FuturaBT-Medium.woff2') format('woff2'),
+        url('./font/FuturaBT-Medium.woff') format('woff'),
+        url('./font/FuturaBT-Medium.ttf') format('truetype'),
+        url('./font/FuturaBT-Medium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Lt BT';
+    src: url('./font/FuturaBT-Light.eot');
+    src: url('./font/FuturaBT-Light.eot') format('embedded-opentype'),
+        url('./font/FuturaBT-Light.woff2') format('woff2'),
+        url('./font/FuturaBT-Light.woff') format('woff'),
+        url('./font/FuturaBT-Light.ttf') format('truetype'),
+        url('./font/FuturaBT-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Albra Display TRIAL Bold TRIAL';
+    src: url('./font/AlbraDisplayTRIAL-Bold.eot');
+    src: url('./font/AlbraDisplayTRIAL-Bold.eot') format('embedded-opentype'),
+        url('./font/AlbraDisplayTRIAL-Bold.woff2') format('woff2'),
+        url('./font/AlbraDisplayTRIAL-Bold.woff') format('woff'),
+        url('./font/AlbraDisplayTRIAL-Bold.ttf') format('truetype'),
+        url('./font/AlbraDisplayTRIAL-Bold.svg') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

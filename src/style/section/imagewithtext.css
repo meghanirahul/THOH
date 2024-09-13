@@ -1,0 +1,36 @@
+.imagewithtext-main{background: #FEF9F6;padding: 60px 0px;}
+.image-with-text{display: flex;flex-wrap: wrap;overflow: hidden;}
+.imagewith{width: 35%;padding-right: 60px;}
+.textwith{width: 45%;display: flex;flex-direction: column;justify-content: center;row-gap: 25px;position: relative;}
+.thumbwith{width: 20%;display: flex;flex-direction: column;align-items: flex-end;justify-content: space-between;}
+.textwith-heading .h2{color: #F77CA6;}
+.imagewith-contain{position: relative;width: 100%;}
+.imagewith-contain::after{content: '';display: block;padding-bottom: 150%;}
+.imagewith-contain img{position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;}
+.thumbnailwith1{position: relative;width: 55%;}
+.thumbnailwith1::after{content: '';display: block;padding-bottom: 130%;}
+.thumbnailwith1 img{position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;}
+.thumbnailwith2{position: relative;width: 96%;}
+.thumbnailwith2::after{content: '';display: block;padding-bottom: 60%;}
+.thumbnailwith2 img{position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;}
+
+.pngthumb{position: absolute;top: 0;right: -80px;}
+
+.textwith .textwith-button .button{margin-left: 5px;}
+
+@media screen and (max-width: 1200px){
+    .imagewith{padding-right: 30px;}
+    .textwith{gap: 20px;}
+}
+@media screen and (max-width:749px){
+    .imagewithtext-main{padding: 30px 0;}
+}
+@media screen and (max-width: 700px){
+    .image-with-text{flex-direction: column;}
+    .imagewith{width: 100%;padding-right: 0;}
+    .textwith{width: 100%;gap: 15px;padding-top: 10px;}
+    .pngthumb{display: none;}
+    .textwith-button{display: flex;justify-content: center;padding: 10px 0;}
+    .thumbwith{display: none;}
+    .imagewith-contain::after{padding-bottom: 80%;}
+}

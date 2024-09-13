@@ -1,0 +1,9 @@
+.announcementbar-main{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;padding: 28px 0;}
+.mobile-menu,.searchbar,.nav-icons{display: flex;flex-wrap: wrap;align-items: center;gap: 15px;}
+.mobile-menu{width: 40px;height: 40px;cursor: pointer;padding: 10px;}
+
+.searchbar{display: none;}
+@media screen and (min-width:990px){
+    .searchbar{display: flex;}
+    .mobile-menu{display: none;}
+}
