@@ -37,7 +37,7 @@
     .product_fullinfo .add_to_counter .button-contain{padding: 15px 25px;}
 }
 @media screen and (max-width: 749px){
-    .slideshow-main{padding: 40px 0;}
+    .slideshow-main{padding: 0 0 40px 0;}
     .slide-heading {font-size: 30px;line-height: 35px;}
     .slide-button{padding-top: 20px;}
 }

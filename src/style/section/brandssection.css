@@ -29,3 +29,6 @@
     .brands-section{padding: 40px 0;}
     .bsection-heading .h2{padding-bottom: 30px;}
 }
+@media screen and (max-width:500px) {
+    .brand-logo svg{width: 80px;}
+}

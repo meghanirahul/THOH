@@ -8,7 +8,7 @@ import '../style/section/header.css'
 import pulover from '../asset/pullover-img.png'
 import floralmaxi from '../asset/floral-mexi-img.png'
 
-function Announcementbar() {
+function Announcementbar(prop) {
     const opendrawer = () => { document.body.classList.add('overlay_h'); document.getElementById('on_cart').classList.add('cart_block'); }
     const openmenu = () => {
         document.body.classList.add('menuovelay'); document.getElementById('menudrawer').classList.add('menu_block');
@@ -74,7 +74,7 @@ function Announcementbar() {
                                 <Account />
                             </div>
                         </a>
-                        <div className="cart" onClick={opendrawer}>
+                        <div id="your_cart" className="cart" onClick={opendrawer}>
                             <Cartlogo />
                         </div>
                     </div>
@@ -84,12 +84,19 @@ function Announcementbar() {
     )
 }
 
-export default function Header() {
+export default function Header(prop) {
+    console.log(prop.passCartData);
     const removemenu = () => {
         document.body.classList.remove('menuovelay'); document.getElementById('menudrawer').classList.remove('menu_block');
         document.getElementsByClassName('menu_close_button')[0].style.display = 'none';
         document.getElementsByClassName('mobile-menu')[0].style.display = 'block';
     }
+    
+    // function getIPFromAmazon() {
+    //     fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => console.log(data))
+    //   }
+    //   getIPFromAmazon()
+
     return (
         <>
             <Announcementbar />

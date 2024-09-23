@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from '../component/Counter.jsx'
+import CounterandCart from './CounterandCart.jsx'
 import Mediagallery from '../component/Mediagallery.jsx'
 import { ReactComponent as Picon1 } from '../asset/p_icon1.svg'
 import { ReactComponent as Picon2 } from '../asset/p_icon2.svg'
@@ -51,6 +51,9 @@ export default function Productmain(prop) {
     }
     const removeover = () => { document.body.classList.remove('overlay_h'); document.getElementById('media_closer').classList.remove('media_block'); }
     const opendrawer = () => { document.body.classList.add('overlay_h'); document.getElementById('media_closer').classList.add('media_block'); }
+    const cartData = (data) => {
+        prop.dataCart(data);
+    }
     return (
         <>
             <div id='media_closer' className="media_opener" onClick={removeover}>
@@ -115,14 +118,7 @@ export default function Productmain(prop) {
                             </div>
                         </div>
                         <div className="add_to_counter">
-                            <div className="counter">
-                                <Counter />
-                            </div>
-                            <div className="add_to_cart">
-                                <div className="button">
-                                    <a href="#name" className="p-heading button-contain">ADD TO CART</a>
-                                </div>
-                            </div>
+                                <CounterandCart product={(product === undefined)?('loading...'):(product)} getCartdata={cartData}/>
                         </div>
                         <div className="details_accordion">
                             <div className="accord_title openaccord" onClick={accord}>

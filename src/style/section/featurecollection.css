@@ -27,3 +27,6 @@
     .feature_collection{padding-bottom: 45px;}
     .feature-collection-heading{padding-bottom: 30px;}
 }
+@media screen and (max-width:500px) {
+    .collection-heading{padding: 5px;}
+}

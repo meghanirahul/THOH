@@ -67,7 +67,7 @@ export default function Mediagallery(swip) {
           >
             {media.map((value, index) => {
               return <SwiperSlide>
-                <div className="p_img m_gallery1" onClick={openproduct}>
+                <div className="m_img m_gallery1 mobile_media" onClick={openproduct}>
                   <img src={require(`../upload/${value}`)} alt="productpageimg" width="100%" height="100%" loading="lazy" tabIndex={index} key={index}></img>
                 </div>
               </SwiperSlide>
@@ -98,16 +98,16 @@ export default function Mediagallery(swip) {
           // controller={{ control: firstSwiper }}
           breakpoints={{
             0: {
-              slidesPerView: 5,
+              slidesPerView: 3,
               slidesPerGroup: 5,
               spaceBetween: 5,
             },
-            400: {
-              slidesPerView: 5,
+            500: {
+              slidesPerView: 4,
               slidesPerGroup: 5,
               spaceBetween: 5,
             },
-            750: {
+            751: {
               slidesPerView: 3,
               slidesPerGroup: 3,
               spaceBetween: 5,

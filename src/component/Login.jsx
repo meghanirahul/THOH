@@ -3,10 +3,11 @@ import { useState } from "react";
 import { initializeApp } from 'firebase/app'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+// import { getDatabase, ref, set, onValue } from 'firebase/database';
 
 export default function Login() {
-    const [email, setemail] = useState(null);
-    const [password, setpassword] = useState(null);
+    const [email, setemail] = useState();
+    const [password, setpassword] = useState();
     const [loginOption, setloginOption] = useState("Sign In");
     const firebaseConfig = {
         apiKey: `${process.env.REACT_APP_apiKey}`,
@@ -15,7 +16,8 @@ export default function Login() {
         storageBucket: `${process.env.REACT_APP_storageBucket}`,
         messagingSenderId: `${process.env.REACT_APP_messagingSenderId}`,
         appId: `${process.env.REACT_APP_appId}`,
-        measurementId: `${process.env.REACT_APP_measurementId}`
+        measurementId: `${process.env.REACT_APP_measurementId}`,
+        databaseURL: `${process.env.REACT_APP_databaseURL}`,
     }
 
     const signUp = async () => {
@@ -105,6 +107,26 @@ export default function Login() {
             }
         });
     }
+    // ======= SEND DATA TO DATABASE (*ONLY WHEN GOOGLE:2023 EMAIL IS LOGIN) =======
+    // let product = 0;
+    // const senddata = () => {
+    //     const app = initializeApp(firebaseConfig);
+    //     const database = getDatabase(app);
+    //     set(ref(database, 'users/' + product), {
+    //         name: "none"
+    //     });
+    //     console.log(product)
+    // }
+    // ======= GET DATA TO DATABASE =======
+    // const getVal = () => {
+    //     const app = initializeApp(firebaseConfig);
+    //     const database = getDatabase(app);
+    //     const productref = ref(database, "products/half-sleev-jacket-beige");
+    //     onValue(productref,(snapshot)=>{
+    //         const productdata = snapshot.val();
+    //         console.log("postElement", productdata);
+    //     })
+    // }
 
     return <>
         <form>
@@ -130,6 +152,8 @@ export default function Login() {
             </div>
             <div className="checklog">
                 <button type="button" onClick={changeLogState}>checklog</button>
+                {/* <button type="button" onClick={senddata}>send data</button> */}
+                {/* <button type="button" onClick={getVal}>get Value of product</button> */}
             </div>
         </form>
     </>

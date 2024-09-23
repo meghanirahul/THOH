@@ -14,7 +14,7 @@
 .product-img-cart{position: relative;overflow: hidden;}
 .product-cart{position: absolute;bottom: -20%;left: 15px;right: 15px;transition: all ease-out 0.20s;}
 .product-inlinecart{display: flex; align-items: center;justify-content: space-between;padding: 8px 15px;background: #FFFFFF;}
-.product-inlinecart .p-heading{line-height: 10px;}
+.product-inlinecart .p-heading{line-height: 12px;}
 
 .product-contain:hover .product-cart{bottom: 15px;transition: all ease-in 0.20s;}
 
@@ -31,4 +31,9 @@
     .final-price{font-size: 16px;line-height: 1;}
     .feature-product-main{padding: 30px 0;}
     .featureproduct-heading{padding-bottom: 30px;}
+    .featureproducts .swiper{padding-bottom: 20px;}
+}
+@media screen and (max-width:500px) {
+    .product-cart{bottom: -40%;}
+    .product-inlinecart{padding: 5px;}
 }

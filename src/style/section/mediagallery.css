@@ -1,8 +1,10 @@
 .gallery-main{width: 100%;display: flex;}
 
-.p_img{position: relative; height: auto;}
+.p_img, .m_img{position: relative; height: auto;}
 .p_img::after{display: block; content: ''; padding-bottom: 115%; width: 100%;}
+.m_img::after{display: block; content: ''; padding-bottom: 115%; width: 100%;}
 .p_img img{position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;}
+.m_img img{position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;}
 .product_gallery .gallery-main .swiper{max-height: 757px;}
 
 .gallery-main .mySwiper{width: 100%;}
@@ -21,4 +23,16 @@
 }
 @media screen and (min-width:1300px) {
     .product_gallery .gallery-main .swiper{max-height: 680px;}
+}
+
+
+@media screen and (max-width:750px) {
+    .m_img::after{padding-bottom: 430px;}
+    .m_img img{left: 50%;transform: translateX(-50%);}
+}
+@media screen and (max-width:500px) {
+    .m_img::after{padding-bottom: 380px;}
+}
+@media screen and (max-width:350px) {
+    .m_img::after{padding-bottom: 120%;}
 }

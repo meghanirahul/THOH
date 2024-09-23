@@ -36,8 +36,16 @@
 .navbar-mobile .submenu-items{width: 100%;}
 .header-mobile .nav-inline .navitem:last-child .navname{border-bottom: 0px;}
 .apehead{width: 100%;top: 0;z-index: 999;background: #ffffff;}
+.cart{cursor: pointer;}
 
 @media screen and (min-width:990px) {
     .navbar{display: block;}
 }
-
+@media screen and (max-width:749px) {
+    .logo svg{height: 40px;padding-bottom: 10px;}
+}
+@media screen and (max-width:300px) {
+    .announcementbar-main{flex-wrap: nowrap;}
+    .mobile-menu{width: 20px;height: 20px;padding: 0;}
+    .nav-icons{flex-wrap: nowrap;}
+}
