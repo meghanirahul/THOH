@@ -7,6 +7,7 @@ import productimg4 from '../asset/product4-img.png'
 import productimg5 from '../asset/product5-img.png'
 import { ReactComponent as Carticon } from '../asset/cart-logo.svg'
 import { useState } from "react";
+import { Link } from 'react-router-dom'
 
 function Featureproduct(props) {
 
@@ -56,10 +57,10 @@ function Featureproduct(props) {
                                             <img src={productimg1} alt="product1"></img>
                                         </div>
                                         <div className="product-cart">
-                                            <a href="product/half-sleev-jacket-beige" className="product-inlinecart">
+                                            <Link to="/product/half-sleev-jacket-beige" className="product-inlinecart">
                                                 <span className="p-heading">ADD TO CART</span>
                                                 <span><Carticon /></span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="productinfo">
@@ -79,10 +80,10 @@ function Featureproduct(props) {
                                             <img src={productimg2} alt="product2"></img>
                                         </div>
                                         <div className="product-cart">
-                                            <a href="/product/summer-half-sleev-hoodie" className="product-inlinecart">
+                                            <Link to="/product/summer-half-sleev-hoodie" className="product-inlinecart">
                                                 <span className="p-heading">ADD TO CART</span>
                                                 <span><Carticon /></span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="productinfo">
@@ -102,10 +103,10 @@ function Featureproduct(props) {
                                             <img src={productimg3} alt="product3"></img>
                                         </div>
                                         <div className="product-cart">
-                                            <a href="/product/half-sleev-ribbed-shirt-street-style" className="product-inlinecart">
+                                            <Link to="/product/half-sleev-ribbed-shirt-street-style" className="product-inlinecart">
                                                 <span className="p-heading">ADD TO CART</span>
                                                 <span><Carticon /></span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="productinfo">
@@ -125,10 +126,10 @@ function Featureproduct(props) {
                                             <img src={productimg4} alt="product4"></img>
                                         </div>
                                         <div className="product-cart">
-                                            <a href="/product/summer-beach-tank-top" className="product-inlinecart">
+                                            <Link to="/product/summer-beach-tank-top" className="product-inlinecart">
                                                 <span className="p-heading">ADD TO CART</span>
                                                 <span><Carticon /></span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="productinfo">
@@ -148,10 +149,10 @@ function Featureproduct(props) {
                                             <img src={productimg5} alt="product4"></img>
                                         </div>
                                         <div className="product-cart">
-                                            <a href="#this" className="product-inlinecart">
+                                            <Link to="#this" className="product-inlinecart">
                                                 <span className="p-heading">ADD TO CART</span>
                                                 <span><Carticon /></span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="productinfo">

@@ -12,27 +12,63 @@ export default function CounterandCart(prop) {
             if (isNumber) { setVal(temp) } else { setVal(1) };
         } else { setVal('') }
     }
-    const addToCart = async(e) => {
+    const addToCart = async (e) => {
         e.preventDefault();
-        console.log(prop.product.handle, val);
-        try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/cart`,{
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({handle: prop.product.handle, quantity: val}),
-            })
-            if(response.ok){
-                const cartitems = await response.json();
-                console.log(cartitems);
-                prop.getCartdata(cartitems);
-                document.getElementById('your_cart').dispatchEvent(new MouseEvent('click',{bubbles: true}))
-            }
-            else{
-                console.log("error in fetch");
-            }
-        }catch(err){
-            console.error(err);
+        // console.log(prop.product.handle, val, prop.product.price[0], prop.product.media[0], prop.product.productName[0]);
+        // try {
+        //     const response = await fetch(`${process.env.REACT_APP_API_URL}/cart`, {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //             handle: prop.product.handle,
+        //             title: prop.product.productName[0],
+        //             price: prop.product.price[0],
+        //             quantity: val,
+        //             featureimg: prop.product.media[0]
+        //         }),
+        //     })
+        //     if (response.ok) {
+        //         const cartitems = await response.json();
+        ////         const staticdata = { 
+        ////             handle: prop.product.handle, 
+        ////             title: prop.product.productName[0], 
+        ////             price: prop.product.price[0], 
+        ////             quantity: val, 
+        ////             featureimg: prop.product.media[0], 
+        ////             total: (parseInt(prop.product.price[0]) * parseInt(val))
+        ////         }
+        //         console.log(cartitems);
+        //         prop.getCartdata(cartitems);
+        ////         prop.getCartdata(staticdata);
+        //         document.getElementById('your_cart').dispatchEvent(new MouseEvent('click', { bubbles: true }))
+        //     }
+        //     else {
+        //         console.log("error in fetch");
+        //     }
+        // } catch (err) {
+        ////     const staticdata = { 
+        ////         handle: prop.product.handle, 
+        ////         title: prop.product.productName[0], 
+        ////         price: prop.product.price[0], 
+        ////         quantity: val, 
+        ////         featureimg: prop.product.media[0], 
+        ////         total: (parseInt(prop.product.price[0]) * parseInt(val))
+        ////     }
+        ////     prop.getCartdata(staticdata);
+        ////     document.getElementById('your_cart').dispatchEvent(new MouseEvent('click', { bubbles: true }))
+        //     console.error(err);
+        // }
+
+        const staticdata = { 
+            handle: prop.product.handle, 
+            title: prop.product.productName[0], 
+            price: prop.product.price[0], 
+            quantity: val, 
+            featureimg: prop.product.media[0], 
+            total: (parseInt(prop.product.price[0]) * parseInt(val))
         }
+        prop.getCartdata(staticdata);
+        document.getElementById('your_cart').dispatchEvent(new MouseEvent('click', { bubbles: true }))
     }
     return (
         <>

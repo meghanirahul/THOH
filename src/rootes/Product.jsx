@@ -21,7 +21,8 @@ export default function Product(prop) {
     console.log('handle =', handle)
 
     const [product, setproduct] = useState();
-    useEffect(() => {
+    useEffect(() => {     
+        
         async function fetchdata() {
             try {
                 const firebaseConfig = {

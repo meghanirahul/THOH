@@ -24,20 +24,22 @@ export default function Mainroot() {
     }
     return (
         <>
-            <Header passCartData={datac}/>
-            <Cartdrawer passCartData={datac}/>
+
             <BrowserRouter>
+                <Header passCartData={datac} />
+                <Cartdrawer passCartData={datac} />
                 <Routes>
-                    <Route index element={<Index swiper={Swiper} swiperslide={SwiperSlide} navigation={Navigation} pagination={Pagination} 
-                    scrollbar={Scrollbar} grid={Grid}/>}/>
-                    <Route path='collection' element={<Collection />}/>
-                    <Route path='account' element={<Account />}/>
-                    <Route path='product/:handle' element={<Product swiper={Swiper} swiperslide={SwiperSlide} navigation={Navigation} pagination={Pagination} 
-                    scrollbar={Scrollbar} grid={Grid} cartData={dataCart}/>}/>
-                    <Route path='404/error' element={<Error />}/>
+                    <Route index element={<Index swiper={Swiper} swiperslide={SwiperSlide} navigation={Navigation} pagination={Pagination}
+                        scrollbar={Scrollbar} grid={Grid} />} />
+                    <Route path='collection' element={<Collection />} />
+                    <Route path='account' element={<Account />} />
+                    <Route path='product/:handle' element={<Product swiper={Swiper} swiperslide={SwiperSlide} navigation={Navigation} pagination={Pagination}
+                        scrollbar={Scrollbar} grid={Grid} cartData={dataCart} />} />
+                    <Route path='404/error' element={<Error />} />
                 </Routes>
+                <Footer />
             </BrowserRouter>
-            <Footer />
+
         </>
     )
 }

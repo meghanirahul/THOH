@@ -7,6 +7,7 @@ import '../style/section/announcementbar.css'
 import '../style/section/header.css'
 import pulover from '../asset/pullover-img.png'
 import floralmaxi from '../asset/floral-mexi-img.png'
+import { Link } from 'react-router-dom'
 
 function Announcementbar(prop) {
     const opendrawer = () => { document.body.classList.add('overlay_h'); document.getElementById('on_cart').classList.add('cart_block'); }
@@ -69,11 +70,11 @@ function Announcementbar(prop) {
                         <Urbanlogo />
                     </div>
                     <div className="nav-icons">
-                        <a href="/account">
+                        <Link to="/account">
                             <div className="customer-account">
                                 <Account />
                             </div>
-                        </a>
+                        </Link>
                         <div id="your_cart" className="cart" onClick={opendrawer}>
                             <Cartlogo />
                         </div>

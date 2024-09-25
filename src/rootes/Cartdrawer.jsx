@@ -4,16 +4,59 @@ import '../style/section/cartdrawer.css'
 
 export default function Cartdrawer(prop) {
    const removeover = () => { document.body.classList.remove('overlay_h'); document.getElementById('on_cart').classList.remove('cart_block'); }
-   const [cartItem, setCartItem] = useState();
-   const [isfetchCart, setisfetch] = useState(null);
-
+   const [cartItem, setCartItem] = useState([]);
+   const [fetchCart, setfetcart] = useState(null);
    const [cartval, cartsetVal] = useState([]);
+
+   //for manually update
+   const [chan, setchan] = useState(false);
+   if (chan) {
+      console.log("=======init======>", prop.passCartData)
+      console.log(cartItem, cartval);
+      setchan(false);
+      let ismatchany = false;
+
+      if (cartItem.length > 0) {
+         const copycartitems = cartItem.map((val, index) => {
+            if (val.handle === prop.passCartData.handle) {
+               ismatchany = true;
+               val.quantity += prop.passCartData.quantity;
+               val.total += prop.passCartData.total;
+               const setnewarr = cartval;
+               setnewarr[index] = val.quantity;
+               cartsetVal(setnewarr);
+               return val;
+            }
+            return val;
+         });
+         if (ismatchany) {
+            setCartItem(copycartitems);
+         }
+         else {
+            setCartItem([...cartItem, prop.passCartData]);
+         }
+      }
+      else {
+         setCartItem([...cartItem, prop.passCartData]);
+      }
+
+   }
+
+
+
+
+
+
+
    useEffect(() => {
       if (prop.passCartData) {
-         setCartItem(prop.passCartData);
-         cartsetVal(prop.passCartData.map((val) => {
-            return val.quantity;
-         }))
+         setchan(true);
+         // setCartItem(prop.passCartData);
+         // cartsetVal(prop.passCartData.map((val)=>{
+         //    return val.quantity;
+         // }))
+
+         // console.log(cartItem, cartval);
       }
    }, [prop.passCartData])
    const plusquant = (e) => {
@@ -21,6 +64,7 @@ export default function Cartdrawer(prop) {
       cartsetVal(items => {
          return items.map((val, index) => {
             if (cartindex === index) {
+               console.log(val)
                if (val < 400) {
                   val += 1;
                }
@@ -32,8 +76,8 @@ export default function Cartdrawer(prop) {
             return val
          })
       })
+      console.log("cartVal", cartval)
       updateCart(e.target.getAttribute('itemID'), (cartval[cartindex] + 1))
-
    }
    const minusquant = (e) => {
       const cartindex = parseInt(e.target.getAttribute('tabIndex'));
@@ -69,55 +113,80 @@ export default function Cartdrawer(prop) {
       } else { cartsetVal(items => { return items.map((val, index) => { if (cartindex === index) { val = 0; updateCart(e.target.getAttribute('itemID'), val); return val; } return val }) }) }
    }
 
-   function updateCart(handle, quantity) {
-      async function fetchwithlatest() {
-         const response = await fetch(`${process.env.REACT_APP_API_URL}/updatecart`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ handle: handle, quantity: quantity }),
-         })
-         if (response.ok) {
-            const cartitems = await response.json();
-            console.log(cartitems, cartval);
-            setCartItem(cartitems);
-            cartsetVal(cartitems.map((val) => {
-               return val.quantity;
-            }))
-         }
-         else {
-            console.log("error in fetch");
-         }
-         setisfetch(null);
+   async function updateCart(handle, quantity) {
+      async function fetchlatest() {
+         //    const response = await fetch(`${process.env.REACT_APP_API_URL}/updatecart`,{
+         //       method: 'POST',
+         //       headers: {'Content-Type': 'application/json'},
+         //       body: JSON.stringify({handle: handle, quantity: quantity}),
+         //    })
+         //    if(response.ok){
+         //       const cartitems = await response.json();
+         //       console.log(cartitems,cartval);
+         //       setCartItem(cartitems);
+         //       cartsetVal(cartitems.map((val)=>{
+         //          return val.quantity;
+         //       }))
+         //   }
+         //   else{
+         //       console.log("error in fetch");
+         //   }
+         const updatedary = cartItem.map((val,index)=>{
+            if(val.handle === handle){
+               val.quantity = quantity;
+               val.total = quantity * parseFloat(parseFloat(val.price).toFixed(2));
+               const updatedquant = cartval;
+               updatedquant[index] = val.quantity;
+               cartsetVal(updatedquant);
+               return val;
+            }
+            return val;
+         });
+         setCartItem(updatedary);
+         setfetcart(null);
       }
-      if (!isfetchCart) {
-         setisfetch(setTimeout(fetchwithlatest, 2000));
+      if (!fetchCart) {
+         setfetcart(setTimeout(fetchlatest, 2000));
       }
+
       else {
-         clearTimeout(isfetchCart);
-         setisfetch(setTimeout(fetchwithlatest, 2000));
+         clearTimeout(fetchCart)
+         setfetcart(setTimeout(fetchlatest, 2000));
          console.log('Timeout is already set, skipping...')
       }
+      console.log(handle, quantity)
    }
 
    const deletitem = async (e) => {
       let handle = e.target.getAttribute('itemID');
       let index = e.target.getAttribute('tabIndex');
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/delete`, {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify({ handle: handle, index: index }),
-      })
-      if (response.ok) {
-         const cartitems = await response.json();
-         console.log(cartitems, cartval);
-         setCartItem(cartitems);
-         cartsetVal(cartitems.map((val) => {
-            return val.quantity;
-         }))
-      }
-      else {
-         console.log("error in fetch");
-      }
+      // const response = await fetch(`${process.env.REACT_APP_API_URL}/delete`, {
+      //    method: 'POST',
+      //    headers: { 'Content-Type': 'application/json' },
+      //    body: JSON.stringify({ handle: handle, index: index }),
+      // })
+      // if (response.ok) {
+      //    const cartitems = await response.json();
+      //    console.log(cartitems, cartval);
+      //    setCartItem(cartitems);
+      //    cartsetVal(cartitems.map((val) => {
+      //       return val.quantity;
+      //    }))
+      // }
+      // else {
+      //    console.log("error in fetch");
+      // }
+      const copyitemsarr = cartItem.filter((val,ind)=>{
+         let deletind
+         if(val.handle === handle){
+            deletind = ind;
+            const quantset = cartval;
+            quantset.splice(index, 1)
+            cartsetVal(quantset);
+         }
+         return ind !== deletind;
+      });
+      setCartItem(copyitemsarr);
    }
 
    return (
