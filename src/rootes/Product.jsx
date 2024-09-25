@@ -34,7 +34,6 @@ export default function Product(prop) {
                     appId: `${process.env.REACT_APP_appId}`,
                     measurementId: `${process.env.REACT_APP_measurementId}`,
                     databaseURL: `${process.env.REACT_APP_databaseURL}`,
-                    uid: `${process.env.REACT_APP_uid}`
                 }
                 const app = initializeApp(firebaseConfig);
                 const database = getDatabase(app);

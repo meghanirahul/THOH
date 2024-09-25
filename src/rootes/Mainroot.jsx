@@ -13,6 +13,7 @@ import Cartdrawer from './Cartdrawer'
 import Account from './Account'
 import Error from '../component/Error'
 import { useState } from 'react';
+import ScrollToTop from '../component/ScrollToTop';
 
 
 export default function Mainroot() {
@@ -28,6 +29,7 @@ export default function Mainroot() {
             <BrowserRouter>
                 <Header passCartData={datac} />
                 <Cartdrawer passCartData={datac} />
+                <ScrollToTop />
                 <Routes>
                     <Route index element={<Index swiper={Swiper} swiperslide={SwiperSlide} navigation={Navigation} pagination={Pagination}
                         scrollbar={Scrollbar} grid={Grid} />} />
